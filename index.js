@@ -27,5 +27,3 @@ app.use('/task1', require('./routes/task1'));
 app.use('/task2', require('./routes/task2'));
 app.use('/task3', require('./routes/task3'));
 app.use('/task4', require('./routes/task4'));
-app.use('/task4', require('./routes/task4'));
-
