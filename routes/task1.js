@@ -10,9 +10,13 @@ router.get("/", (req, res) => {
     })
 });
 
+
 router.get("/:emotion", (req, res) => {
     let x = req.params.emotion;
-    x = `task1/${x}/${x}1.jpg`;
+
+    const i = emotions.findIndex(e => e.title == x);
+
+    x = emotions[i].quotePath;
     res.render("task1", {
         emotions: emotions,
         quotePath: x
