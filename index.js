@@ -12,7 +12,7 @@ const app = express();
 const express_handlebars = require('express-handlebars');
 
 app.engine('.hbs', express_handlebars.engine({
-    layoutsDir: __dirname + "/views",
+    layoutsDir: __dirname + "/views/layouts",
     extname: '.hbs',
     defaultLayout: 'layout'
 }));
@@ -22,10 +22,10 @@ app.set('views', './views');
 
 app.use(express.static(__dirname + "/public"));
 
-app.listen(() => {
-    // if(err) console.log(err);
+app.listen(9000, (err) => {
+    if(err) console.log(err);
     console.log('listening on 9000');
-}, port=9000);
+});
 
 app.get("/", (req, res) => {
     res.render("index");
